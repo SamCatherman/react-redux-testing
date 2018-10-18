@@ -10,12 +10,16 @@
 ### What do we need to test?
 
 - This is the trickiest part - you can test anything small or large.
-- Deciding what exactly to test is painful,
+- Deciding what exactly to test can be painful, but will lead to a deeper understanding of the code you wind up writing.
+- Test the behavior of your app! If it's event-driven, simulate the events that trigger different functions.
+- Test functions that accept input and return an output
+- (in react) test components! Test their methods, whether they render, that they match a snapshot etc.
 
 ### What will we use to do it?
 
 - Jest - facebook's test runner, included with 'create-react-app'
 - Enzyme - Airbnb's test suite, allows for shallow rendering, snapshotting components and more
+- Rspec - Testing Ruby code (useful if your backend is built in rails!)
 
 ### SWBATS
 
@@ -59,7 +63,8 @@ to run tests: `$ yarn test (or npm test)`
 #### Helpful tricks
 
 - export a 'non-connected' or 'non-combined' version of your components/reducers for easy testing
--
+- If a test seems simple, write it anyway! It could prevent sneaky bugs
+- Keep calm, and read the docs!
 
 #### Resources
 
@@ -72,4 +77,6 @@ to run tests: `$ yarn test (or npm test)`
 - [Testing action creators](https://redux.js.org/recipes/writingtests#action-creators)
 - [Make your snapshots readable](https://github.com/adriantoine/enzyme-to-json-v3-testing)
 - [Video on Mocks](https://youtu.be/Af4M8GMoxi4)
--
+- [Mocha](https://mochajs.org/)
+- [Chai](https://www.chaijs.com/)
+- [Sinon](https://sinonjs.org/)
