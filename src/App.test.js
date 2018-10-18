@@ -1,9 +1,21 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
+import React from "react";
+import { App } from "./App";
+import { shallow } from "enzyme";
+import data from "./data/data";
+import PostsContainer from "./Components/PostsContainer";
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
-  ReactDOM.unmountComponentAtNode(div);
+it("renders without crashing", () => {
+  const wrapper = shallow(<App />);
+  expect(wrapper.find(".App").length).toEqual(1);
 });
+
+// it("renders the PostsContainer component", () => {
+//   const wrapper = shallow(<App />);
+//   expect(wrapper.containsMatchingElement(<PostsContainer />)).toEqual(true);
+// });
+
+// it("sends posts as props to PostsContaier", () => {
+//   let props = data;
+//   let wrapper = shallow(<App {...props} />);
+//   console.log(wrapper.props().children);
+// });

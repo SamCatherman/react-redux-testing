@@ -1,7 +1,6 @@
 import { LOAD_DATA } from "./types";
-import data from "../data/data";
 
-export function loadData() {
+export function loadData(data) {
   console.log("loadData");
   return { type: LOAD_DATA, payload: data };
 }
