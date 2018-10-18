@@ -10,7 +10,8 @@ let dummyPost = {
 };
 
 describe("Post", () => {
-  it("says hi", () => {
-    console.log("hi");
+  it("matches its snapshot", () => {
+    let wrapper = shallow(<Post post={dummyPost} />);
+    expect(wrapper).toMatchSnapshot();
   });
 });

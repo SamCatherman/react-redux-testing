@@ -1,3 +1,22 @@
+### Why do we test our code?
+
+- Make sure small parts of application are working as expected
+- Make sure new features don't break old features
+- Automate previous two points - checking existing code is less tedious
+  - simulate events like clicks, typing, form submit, fetch
+- Reusable - running into the same bug more than once?
+- Communicate ideas to other developers - 'self-document' your code by writing tests
+
+### What do we need to test?
+
+- This is the trickiest part - you can test anything small or large.
+- Deciding what exactly to test is painful,
+
+### What will we use to do it?
+
+- Jest - facebook's test runner, included with 'create-react-app'
+- Enzyme - Airbnb's test suite, allows for shallow rendering, snapshotting components and more
+
 ### SWBATS
 
 - Learn about different testing software classifications
@@ -10,18 +29,32 @@
 
 ### Setting up test environment
 
+To add Enzyme:
+`$ yarn add enzyme enzyme-adapter-react-16`
+
+Create setup file called `setupTests.js`. add the following:
+
 ```
-  To add Enzyme: $ yarn add enzyme enzyme-adapter-react-16
+import { configure } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
 
-  Create setup file called setupTests.js. add the following:
-
-  import { configure } from 'enzyme';
-  import Adapter from 'enzyme-adapter-react-16';
-
-  configure({ adapter: new Adapter() });
-
-  to run tests: $ yarn test (or npm test)
+configure({ adapter: new Adapter() })
 ```
+
+to configure enzyme-to-json (which makes snapshots more readable):
+`$ yarn add enzyme-to-json`
+add the following to your package.json:
+
+```
+    "name": "readit",
+    "jest": {
+      "snapshotSerializers": [
+        "enzyme-to-json/serializer"
+      ]
+    },
+```
+
+to run tests: `$ yarn test (or npm test)`
 
 #### Helpful tricks
 
@@ -30,7 +63,13 @@
 
 #### Resources
 
-- https://redux.js.org/recipes/writingtests
-- https://airbnb.io/enzyme/docs/installation/
-- https://reactjs.org/community/testing.html
-- https://jestjs.io/docs/en/tutorial-react
+- [React and testing](https://reactjs.org/community/testing.html)
+- [Jest and React](https://jestjs.io/docs/en/tutorial-react)
+- [Jest Snapshots](https://jestjs.io/docs/en/snapshot-testing)
+- [Create-React-App, Tests and You](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#running-tests)
+- [Enzyme docs](https://airbnb.io/enzyme/docs/installation/)
+- [Redux and testing](https://redux.js.org/recipes/writingtests)
+- [Testing action creators](https://redux.js.org/recipes/writingtests#action-creators)
+- [Make your snapshots readable](https://github.com/adriantoine/enzyme-to-json-v3-testing)
+- [Video on Mocks](https://youtu.be/Af4M8GMoxi4)
+-

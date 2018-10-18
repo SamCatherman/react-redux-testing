@@ -4,7 +4,6 @@ import { LOAD_DATA } from "../actions/types";
 const postsReducer = (state = [], action) => {
   switch (action.type) {
     case LOAD_DATA:
-      console.log("state", state);
       return [...action.payload];
     default:
       return state;

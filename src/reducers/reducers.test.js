@@ -7,7 +7,9 @@ describe("postsReducer", () => {
     expect(postsReducer(undefined, action)).toEqual([]);
   });
 
-  // sample data for loading posts
-  // let posts = [{ title: "testpost 1" }, { title: "testpost2" }];
-  // let action = { type: "LOAD_DATA", payload: posts };
+  it("Loads data", () => {
+    let posts = [{ title: "testpost 1" }, { title: "testpost2" }];
+    let action = { type: "LOAD_DATA", payload: posts };
+    expect(postsReducer(action.payload, action.type)).toEqual(posts);
+  });
 });

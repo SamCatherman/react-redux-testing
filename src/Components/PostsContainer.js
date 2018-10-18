@@ -7,6 +7,7 @@ const PostsContainer = ({ posts }) => {
   return (
     <div className="postsContainer">
       {posts ? posts.map(p => <Post post={p.data} key={p.data.id} />) : null}
+      <p>hello</p>
     </div>
   );
 };
@@ -18,4 +19,4 @@ const mapStateToProps = state => {
 };
 
 export default connect(mapStateToProps)(PostsContainer);
-export { PostsContainer, mapStateToProps };
+export { PostsContainer };
