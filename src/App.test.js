@@ -14,9 +14,3 @@ it("renders without crashing", () => {
 //   const wrapper = shallow(<App />);
 //   expect(wrapper.containsMatchingElement(<PostsContainer />)).toEqual(true);
 // });
-
-// it("sends posts as props to PostsContaier", () => {
-//   let props = data;
-//   let wrapper = shallow(<App {...props} />);
-//   console.log(wrapper.props().children);
-// });
