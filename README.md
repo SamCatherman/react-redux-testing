@@ -1,3 +1,6 @@
+## Testing your React-Redux Application
+![Tests](TESTS.png)
+
 ### Why do we test our code?
 
 - Make sure small parts of application are working as expected
