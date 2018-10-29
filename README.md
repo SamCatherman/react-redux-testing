@@ -53,7 +53,6 @@ to configure enzyme-to-json (which makes snapshots more readable):
 add the following to your package.json:
 
 ```
-    "name": "readit",
     "jest": {
       "snapshotSerializers": [
         "enzyme-to-json/serializer"
